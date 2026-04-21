@@ -6,8 +6,12 @@ API de Task Manager em Python/Flask usada como entrada do desafio `refactor-arch
 
 ```bash
 pip install -r requirements.txt
+cp .env.example .env
 python seed.py
 python app.py
 ```
 
 A aplicação sobe em `http://localhost:5000`. O `seed.py` popula o banco SQLite (`tasks.db`) com usuários, categorias e tasks de exemplo — **rode-o antes do primeiro boot**, caso contrário os endpoints vão retornar listas vazias.
+
+O arquivo `.env` precisa definir `SECRET_KEY`; os demais valores têm defaults seguros para desenvolvimento.
+O `seed.py` também precisa de `SEED_ADMIN_PASSWORD`, `SEED_USER_PASSWORD` e `SEED_MANAGER_PASSWORD`.
